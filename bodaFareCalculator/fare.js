@@ -1,6 +1,15 @@
-function calculateBodaFare(amount,distance){
-    let prompt ='Where are you going boss! How many kilometers?'
-   let distances = 'basFare +(distanceInKm* chargePerKm)'
-    console.log(prompt) ||console.log('um,Kisumu, I guess 76km')|| console.log('That will be'+'' + amount)
+function calculateBodaFare(){
+    const distancestr = window.prompt('How far are you travelling? Kilometer ngapi ?')
+    const distanceInKm = parseInt(distancestr)
+    console.log (distancestr)
+    const baseFare = 50
+    const chargePerKm = 15
+
+
+ let totalFare =baseFare + (distanceInKm * chargePerKm)
+ alert(`Uko kwote? Io ni :${distanceInKm}
+        Using a motorbike will cost :KES ${baseFare}
+        Mpaka huko :KES ${distanceInKm *chargePerKm}
+        Total : KES ${totalFare}`)
+   console.log('Thank you')
 }
-calculateBodaFare (' 400 ksh')
