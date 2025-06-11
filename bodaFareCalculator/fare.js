@@ -11,5 +11,5 @@ function calculateBodaFare(){
         Using a motorbike will cost :KES ${baseFare}
         Mpaka huko :KES ${distanceInKm *chargePerKm}
         Total : KES ${totalFare}`)
-   console.log('Thank you')
+   console.log('Thank you.Come again')
 }
