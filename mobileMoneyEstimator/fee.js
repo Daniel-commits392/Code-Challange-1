@@ -1,20 +1,25 @@
-function estimateTransactionFee(){
-    const amountStr =window.prompt('How much are you sending')
-    const amount = parseInt(amountStr)
-  
+let send = Number(prompt('How much money do you want to send ?'))// global scope
 
-let transactionCost = (amount * 1.5) /100
-if  (transactionCost<=10){
-    alert(`Sending KES: ${amount}
-          Calculated Transaction Fee: KES 10
-          TotalAmount To Be Debited : ${amount+10}`
-    )
-}
-if (transactionCost>=70){
-    alert(`Sending KES ; ${amount}
-           Calculated Transaction Fee :KES 70
-           Total Amount To Be Debited : ${amount +70}`)
-}
-console.log('Thanks for trusting us')
-}
+function feeAmount(amountSent,){
+    let fee = amountSent * 0.02
+    if(fee <10) return 10;
+    if (fee>70) return 70;
+    return fee
+    }// calculates the feet hat will be charged
 
+function calculatTransactionFee(amountSent,fee){
+   let totalDeducted = amountSent + fee 
+   console.log(`
+    Mobile money Transaction Summary
+    Amount sent: KES ${amountSent}
+    Transaction Fee: KES ${fee}
+    Total Deducted: KES ${totalDeducted}`)
+} // calculates the total amount 
+
+if(isNaN(send) || send<=0 ){
+    console.log('Please enter the valid amount.');
+}else{
+    let fee =feeAmount(send) 
+    calculatTransactionFee(send,fee);
+    
+}
